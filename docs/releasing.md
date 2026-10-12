@@ -1,13 +1,13 @@
-# Releasing VectorCraft
+# Releasing Tend's Vector
 
 > **Last updated:** 2026-10-12 · **Change:** minor (RPM runtime capabilities and metadata checks, #1275)
 
 Every push to the `release` branch runs `.github/workflows/release.yml`. The workflow builds
 installers for macOS, Windows, Linux (including Flatpak bundles and a RISC-V tarball) and FreeBSD, plus the web build, and creates or updates a
-**draft** GitHub Release named `VectorCraft v<version>`. Nobody sees a draft until a maintainer
+**draft** GitHub Release named `Tend's Vector v<version>`. Nobody sees a draft until a maintainer
 publishes it.
 
-User-facing names say **VectorCraft**. Files, binaries and ids stay lowercase
+User-facing names say **Tend's Vector**. Files, binaries and ids stay lowercase
 (`vectorcraft-<version>-<platform>-<arch>.<ext>`, `ai.storyteller.vectorcraft`).
 
 ## Cutting a release
@@ -21,10 +21,10 @@ User-facing names say **VectorCraft**. Files, binaries and ids stay lowercase
    ```
 
    Commit the change (`Cargo.toml` + `Cargo.lock`) through the normal review flow, as a
-   `Release: VectorCraft v0.4.0` commit whose message says what changed for users.
+   `Release: Tend's Vector v0.4.0` commit whose message says what changed for users.
 2. **Merge `main` into `release`** (or fast-forward it) and push. The workflow starts by itself.
 3. **Wait for the draft.** When every job is done (macOS notarization is the slow part), the
-   Releases page has a draft `VectorCraft v0.4.0`, targeting the pushed commit, with every
+   Releases page has a draft `Tend's Vector v0.4.0`, targeting the pushed commit, with every
    artifact and `SHA256SUMS.txt`. The notes are generated from the merged pull requests.
 4. **Check it.** Download an installer or two and read the job summaries. A `::warning::` there
    means a signing secret was missing and that artifact is unsigned.
@@ -71,14 +71,14 @@ The rules are in craftrules `standards/fonts.md`, the build option in
 ### macOS
 
 `packaging/macos/package.sh` builds `aarch64-apple-darwin` and `x86_64-apple-darwin` with
-`MACOSX_DEPLOYMENT_TARGET=11.0`, joins them with `lipo` and assembles `VectorCraft.app`:
+`MACOSX_DEPLOYMENT_TARGET=11.0`, joins them with `lipo` and assembles `Tend's Vector.app`:
 
 - `Info.plist` is generated from `Info.plist.in` (bundle id `ai.storyteller.vectorcraft`,
   `LSMinimumSystemVersion` 11.0, the version and the build commit). The icon is
   `assets/app-icon/vectorcraft.icns`. `cargo xtask bundle` fills in the same template for its
   development app.
 - **Document types:** `Info.plist.in` declares every format File › Open reads, so Finder opens
-  them with VectorCraft (double-click, Open With, a drop on the Dock icon). VectorCraft owns its own
+  them with Tend's Vector (double-click, Open With, a drop on the Dock icon). Tend's Vector owns its own
   formats and is an alternate for the others. A test keeps the list in step with the engine's
   `OPEN_EXTS`. AppKit hands the files to the app as open-document events, which
   `apps/vectorcraft/src/open_documents.rs` opens like files named on the command line.
@@ -90,7 +90,7 @@ The rules are in craftrules `standards/fonts.md`, the build option in
   (`hdiutil create -srcfolder`, retried when a CI runner's device is busy, with an `Applications` link
   to drag onto), which is signed, notarized and stapled too; the app mounted from it must pass
   `codesign --verify --strict --deep` (#1085). Its Finder window (background, icon size and positions) comes from
-  [`packaging/macos/dmg/`](../packaging/macos/dmg/README.md), and its volume is named `VectorCraft`
+  [`packaging/macos/dmg/`](../packaging/macos/dmg/README.md), and its volume is named `Tend's Vector`
   without the version, which the window's background needs; the DMG file name keeps the version.
 - **CLI:** the universal `vectorcraft-cli` is signed the same way, zipped, and the zip is
   notarized. A bare executable can't hold a stapled ticket, so Gatekeeper looks the CLI's ticket up
@@ -119,7 +119,7 @@ to the target triple, so host build scripts aren't affected.
 - Double-clicking the MSI opens a setup wizard (WixUI_InstallDir without the licence page):
   Welcome, install folder (remembered for upgrades in `HKLM\Software\VectorCraft\InstallDir`),
   Shortcuts (a ticked "Create a desktop shortcut" box), Ready, a progress page, and a Finish page
-  that says where to find the app, with a ticked "Launch VectorCraft" box. The pages name the full
+  that says where to find the app, with a ticked "Launch Tend's Vector" box. The pages name the full
   version (`vectorcraft.en-us.wxl`). `package.ps1` draws the wizard's banner and side bitmaps from
   the app icon, so no WiX stock art ships. `msiexec /qn` still installs silently, with the desktop
   shortcut unless `INSTALLDESKTOPSHORTCUT=""` is passed. Building needs the WiX UI and Util
@@ -142,7 +142,7 @@ to the target triple, so host build scripts aren't affected.
 `packaging/linux/package.sh` builds the release binaries and packages them as an AppImage, a
 `.deb` and an `.rpm` (with [nfpm](https://nfpm.goreleaser.com), from `nfpm.yaml`) and a plain
 `.tar.gz` tree (`bin/`, `share/`). The packages install both programs, the desktop entry, the
-AppStream metainfo, the MIME type for VectorCraft documents, the icons and the licence files.
+AppStream metainfo, the MIME type for Tend's Vector documents, the icons and the licence files.
 
 The jobs run on `ubuntu-22.04`, the oldest GitHub-hosted image, so the binaries only need
 glibc 2.35 or newer: Ubuntu 22.04+, Debian 12+, Fedora 36+ and RHEL 10. Moving the job to a newer
@@ -202,7 +202,7 @@ files for common hosts.
 ## The draft release
 
 The last job waits for every build, downloads their artifacts, writes `SHA256SUMS.txt` and creates
-the draft `VectorCraft v<version>` with notes generated from the merged pull requests. If the draft
+the draft `Tend's Vector v<version>` with notes generated from the merged pull requests. If the draft
 already exists, it replaces its assets and keeps it a draft. If that version is already published,
 the job fails and asks for a version bump (`cargo xtask version set`).
 

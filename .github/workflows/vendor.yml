@@ -1,0 +1,44 @@
+name: Vendor dependencies
+
+# Downloads every dependency (crates.io and git) into a folder and publishes it as a GitHub
+# Release asset, so the app can still be built offline or if a dependency disappears.
+# Run it from the Actions tab (Run workflow). Re-run it after Cargo.lock changes.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Rust toolchain
+        run: |
+          rustup update stable --no-self-update
+          rustup default stable
+          cargo --version
+
+      - name: Vendor
+        run: |
+          cargo vendor --locked vendor-all > vendor-config.toml
+          echo "vendored crates: $(ls vendor-all | wc -l)"
+          du -sh vendor-all
+
+      - name: Pack
+        run: |
+          STAMP="$(date -u +%Y%m%d)"
+          echo "STAMP=$STAMP" >> "$GITHUB_ENV"
+          tar --zstd -cf "tends-vector-vendor-$STAMP.tar.zst" vendor-all vendor-config.toml Cargo.lock
+          ls -lh tends-vector-vendor-*.tar.zst
+
+      - name: Publish as release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "vendor-$STAMP" "tends-vector-vendor-$STAMP.tar.zst" \
+            --title "Vendored dependencies $STAMP" \
+            --notes "All dependencies for offline builds. Unpack in the repo root, add vendor-config.toml's contents to .cargo/config.toml and run: cargo build --release --offline"

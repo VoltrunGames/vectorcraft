@@ -1,8 +1,8 @@
-# VectorCraft MCP server
+# Tend's Vector MCP server
 
 `vectorcraft-cli mcp` runs a [Model Context Protocol](https://modelcontextprotocol.io) server on stdio
 (newline-delimited JSON-RPC 2.0; see [Protocol](#protocol) for version negotiation). Agents use it to
-draw, inspect and look at VectorCraft documents.
+draw, inspect and look at Tend's Vector documents.
 
 It has two backends:
 
@@ -86,7 +86,7 @@ the suite) keep the agent to the folders you give it:
   Links in an opened document that point outside the read root show as missing.
 - The preferences that move folders the app reads or writes on its own (`fontsFolder`,
   `pluginsFolder`, `recoveryFolder`, `templatesFolder`) can only be set inside the roots. The app's own folders
-  (preferences, Data Recovery, the User Defined library folders, VectorCraft's Fonts folder) are not
+  (preferences, Data Recovery, the User Defined library folders, Tend's Vector's Fonts folder) are not
   confined: no agent names a path there.
 - The roots must be existing folders; a missing one stops the server with an error. Each flag is
   given once (`--flag <dir>` or `--flag=<dir>`).
@@ -408,7 +408,7 @@ can't be read becomes a placeholder in its box, named in `warnings` and `missing
 
 Native files: `run_command document.save {compress: true}` writes a gzip-compressed `.vectorcraft` (the
 `useCompression` preference makes that the default for saves; compressed files open like any other, told apart by
-their content). `version: 2` or `1` writes a file older VectorCraft versions open (format name `drawcraft`, never
+their content). `version: 2` or `1` writes a file older Tend's Vector versions open (format name `drawcraft`, never
 compressed), and `preview: true` embeds a PNG of the first artboard, at most 256 px on its longer side. A save writes
 a temporary file and renames it over the old one, so a failed save never damages the file; only the images the
 document uses are written, and document keys written by a newer version are kept.
@@ -568,7 +568,7 @@ paints under its layers, which isn't art). `layers: false` gives one layer per p
 {"name":"run_command","arguments":{"command":"document.open","params":{"path":"/tmp/map.pdf","textAs":"outlines","layers":false}}}
 ```
 
-Preserve Editing (`preserveEditing`, on in the `VectorCraft Default` preset) embeds the native document in the PDF as
+Preserve Editing (`preserveEditing`, on in the `Tend's Vector Default` preset) embeds the native document in the PDF as
 an embedded file (`vectorcraft-editing.vectorcraft`; files named `drawcraft-editing.drawcraft` are read too) with a
 hash of the pages it was written with. `open_file` / `document.open` of such a PDF, `.ai` or `.ait` (no `pages` picked) restores the
 document exactly (`restored: true`); when another app changed the pages, or the data can't be read, the artwork is
@@ -1518,7 +1518,7 @@ with a ToUnicode map (fonts whose licence forbids embedding stay outlines, with 
 true}` writes every glyph as an outline instead.
 
 ```json
-{"name":"run_command","arguments":{"command":"document.exportPdf","params":{"path":"/tmp/press.pdf","output":{"conversion":"preserveNumbers","destination":"VectorCraft Generic CMYK (SWOP-like)","profiles":"destination","outputIntent":"VectorCraft Generic CMYK (SWOP-like)","trapped":true},"advanced":{"outlineText":false}}}}
+{"name":"run_command","arguments":{"command":"document.exportPdf","params":{"path":"/tmp/press.pdf","output":{"conversion":"preserveNumbers","destination":"Tend's Vector Generic CMYK (SWOP-like)","profiles":"destination","outputIntent":"Tend's Vector Generic CMYK (SWOP-like)","trapped":true},"advanced":{"outlineText":false}}}}
 ```
 
 ## Scale Strokes & Effects
@@ -1915,7 +1915,7 @@ passed straight back to `file.new`. Print presets and sizes without `units` star
 `file.place` puts another file's art into the active document as one undo step without touching the clipboard:
 a raster image at 100% of its physical size (the resolution its file declares, else 72 ppi; linked to its `path`
 unless `link: false`; a Photoshop document as its merged image), an SVG as one group (fitted by its art's bounds; with `crop: "crop"` given, framed and clipped by its viewBox, #788), a PDF/.ai page as one clipped group, with the images, symbols, patterns
-and swatches it uses. A VectorCraft document read from `path` is a placed document: one locked object showing its
+and swatches it uses. A Tend's Vector document read from `path` is a placed document: one locked object showing its
 artboard `page` (or, with `crop: "bounding"`, its art's bounds), linked to the file and read again when it changes
 (see Linked images), and vectors in every output; with `link: false` (or from `dataBase64`) it is an editable copy
 of its art, as one clipped group. `at` centres it, `rect` fits it, `replace`
@@ -2088,7 +2088,7 @@ bounds, or the artboard less a 36 pt margin.
 
 ## PDF presets
 
-`pdf.preset.list` lists the built-in presets (`VectorCraft Default`, which preserves editing, then High Quality Print,
+`pdf.preset.list` lists the built-in presets (`Tend's Vector Default`, which preserves editing, then High Quality Print,
 Press Quality, Smallest File Size and the PDF/X presets, `builtIn: true`; `supported` says the writer produces the
 preset's standard) and the saved ones, each with its `description` and `settings`. `pdf.preset.save {name?,
 newName?, description?, preset?, …document.exportPdf options}` creates or changes a saved preset (a change starts from
@@ -2119,7 +2119,7 @@ password?}` (the page's objects), `clipboard.importImage {dataBase64, mime?}` (a
 physical size) or `clipboard.importText {text}` (point text in the default type style), each centred on `center`
 (default: the first artboard); then any `edit.paste*` command pastes it. The desktop app does this itself: Copy and
 Cut publish the formats to the system clipboard, and a Paste outside text editing first reads what another app
-copied (SVG, then PDF, then text, then a bitmap; SVG markup in text counts as SVG). Pasting what VectorCraft copied
+copied (SVG, then PDF, then text, then a bitmap; SVG markup in text counts as SVG). Pasting what Tend's Vector copied
 keeps the lossless internal clipboard. Windows carries every format both ways and pastes a bitmap from PNG, else
 from the device-independent bitmap screenshots copy (`CF_DIBV5`, then `CF_DIB`; alpha kept, opaque when it is zero
 throughout, at most 32768 px a side); macOS and Linux carry one format (the text, else the PNG) and paste text and
@@ -2374,7 +2374,7 @@ again. Several apps running at once (agents' instances included) never see each 
 and an area being restored or discarded is held, so two apps launched together never both take it.
 
 `file.recovery.list` → `{copies: [{file, title, path, format, saved, open, running}], location}` (`open`: the copy of a
-document open here; `running`: kept by another VectorCraft that is running). `file.recovery.restore {file?}` opens
+document open here; `running`: kept by another Tend's Vector that is running). `file.recovery.restore {file?}` opens
 copies left behind (default: all) as `"<name> [Recovered]"`: modified, and Save asks where to save them (suggesting
 their original file); the copy moves into this app's area. `file.recovery.discard {file?}` deletes them. Without a
 folder or browser storage the commands are disabled and say how to set one.
@@ -2400,7 +2400,7 @@ or in `options` (`file.formatOptions {format}` lists them with their values):
   (default true) with false write blank pages around the native document (smaller; other apps show empty pages).
 - `.ai` only: `compress` (default true) is the PDF option `compression.compressText`.
 
-File → Save As asks for these in the save options dialog (VectorCraft Options) after the save panel; Save, Save a Copy
+File → Save As asks for these in the save options dialog (Tend's Vector Options) after the save panel; Save, Save a Copy
 and Save as Template reuse the options as last saved (or Use Compression).
 
 ```json
@@ -2422,7 +2422,7 @@ white and gradients and patterns as one colour. What a format leaves out comes b
 
 `document.open` and `file.place` read `.emf` and `.wmf` (placeable or not) into one artboard, the picture's frame, and
 one layer: paths with their fills and strokes (pens become strokes with caps, joins and dashes), clipping groups,
-images and point type in the font the file names. Records VectorCraft doesn't read (EMF+ drawing among them) are
+images and point type in the font the file names. Records Tend's Vector doesn't read (EMF+ drawing among them) are
 skipped with one warning. `clipboard.importEmf {dataBase64, center?}` loads an EMF or WMF picture into the clipboard
 for `edit.paste`; the app pastes `image/emf` from the system clipboard ahead of text and bitmaps when the platform's
 clipboard service offers it (the Windows desktop service doesn't read metafiles yet).
@@ -2584,7 +2584,7 @@ unless `replace`). Saved presets live with the preferences. To print with a pres
 ## EPS and PostScript import
 
 `document.open` and `file.place` read `.eps` files, and PostScript by any name (an `.ai` saved without PDF
-compatibility opens as artwork; an `.ait` one as a new untitled document). An EPS file VectorCraft wrote restores the
+compatibility opens as artwork; an `.ait` one as a new untitled document). An EPS file Tend's Vector wrote restores the
 document it carries (`restored: true`, as Preserve Editing does for PDF and SVG); when that document can't be read the
 PostScript is read instead and the first warning says why.
 
@@ -2632,7 +2632,7 @@ its standard: what it still breaks (transparency, RGB in PDF/X-1a, a font not em
 writing a file that only claims the standard.
 
 ```json
-{"name":"run_command","arguments":{"command":"document.exportPdf","params":{"path":"/tmp/press.pdf","preset":"PDF/X-1a:2001","output":{"outputIntent":"VectorCraft Generic CMYK (SWOP-like)","outputCondition":"Coated","trapped":false}}}}
+{"name":"run_command","arguments":{"command":"document.exportPdf","params":{"path":"/tmp/press.pdf","preset":"PDF/X-1a:2001","output":{"outputIntent":"Tend's Vector Generic CMYK (SWOP-like)","outputCondition":"Coated","trapped":false}}}}
 ```
 
 ## Print tiling
@@ -2673,7 +2673,7 @@ colours keep their numbers with `preserveNumbers`), so a CMYK profile writes dev
 CMYK one. Settings saved before these options load with their defaults.
 
 ```json
-{"name":"run_command","arguments":{"command":"file.print","params":{"path":"/tmp/proof.pdf","settings":{"advanced":{"overprints":"simulate","flattenerPreset":"High Resolution"},"color":{"profile":"VectorCraft Generic CMYK (SWOP-like)","intent":"perceptual"}}}}}
+{"name":"run_command","arguments":{"command":"file.print","params":{"path":"/tmp/proof.pdf","settings":{"advanced":{"overprints":"simulate","flattenerPreset":"High Resolution"},"color":{"profile":"Tend's Vector Generic CMYK (SWOP-like)","intent":"perceptual"}}}}}
 ```
 
 ### Rotated bounding boxes
@@ -2976,9 +2976,9 @@ included) the fonts in DirectWrite's system font collection, such as those Adobe
 the fonts CoreText's font manager lists outside them, such as those apps and font managers register from their own
 folders; Linux and BSD: `/usr/share/fonts`,
 `/usr/local/share/fonts`, `~/.fonts` and the XDG data folders' `fonts`, `~/.local/share/fonts` among them, and in a
-Flatpak sandbox the host's fonts). Faces without outlines VectorCraft draws (no `glyf`, `CFF`, `CFF2` or `VARC` table, such
+Flatpak sandbox the host's fonts). Faces without outlines Tend's Vector draws (no `glyf`, `CFF`, `CFF2` or `VARC` table, such
 as bitmap-only fonts) are left out. The scan also reads the folder the `fontsFolder` preference names (Preferences › Type ›
-Additional Fonts Folder) with its subfolders and, in the desktop app and `vectorcraft-cli`, VectorCraft's own `Fonts` folder
+Additional Fonts Folder) with its subfolders and, in the desktop app and `vectorcraft-cli`, Tend's Vector's own `Fonts` folder
 next to the preferences: `~/Library/Application Support/VectorCraft/Fonts` on macOS, `%APPDATA%\VectorCraft\Fonts` on
 Windows, and `$XDG_CONFIG_HOME/vectorcraft/Fonts` or `~/.config/vectorcraft/Fonts` on Linux and BSD. `text.addFontFiles`
 copies fonts into that folder. The installed fonts are cataloged once per session (in the background when the app starts, else on the first lookup
@@ -3028,7 +3028,7 @@ folders whose contents are in the cloud, and it follows no links; a picked folde
 that goes through a link is searched at its target. Programs installed in other folders, such as a folder on another
 drive, are searched as any other folder is.
 
-`text.addFontFiles {files}` copies files that the session's last search found into VectorCraft's `Fonts` folder, then
+`text.addFontFiles {files}` copies files that the session's last search found into Tend's Vector's `Fonts` folder, then
 scans the fonts again, and type set in them redraws. It copies only regular `.ttf`, `.otf`, `.ttc`, `.otc`, `.woff`
 and `.woff2` files and suitcase fonts (with their resource fork), at most 256 MB a file and 1 GB in all, and lists any
 other file in `skipped`. It never replaces a file: the names `Name.otf`, `Name 2.otf` up to `Name 99.otf` are tried in

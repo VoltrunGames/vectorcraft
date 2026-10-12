@@ -1,4 +1,4 @@
-//! Desktop printer transport. VectorCraft composes every page and copy before submission;
+//! Desktop printer transport. Tend's Vector composes every page and copy before submission;
 //! craft-print owns discovery and spooling. Windows 7 keeps its viewer-based transport because
 //! Windows.Data.Pdf is unavailable there.
 #[cfg(not(all(windows, any(feature = "windows7", target_vendor = "win7"))))]

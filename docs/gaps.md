@@ -213,7 +213,7 @@ from G14 and the budget run of G15: **~170–270 h** one agent, ~50–80 h wall 
 
 ## G17 Ecosystem: third-party plug-ins
 
-- **Missing:** Illustrator's ecosystem is a C++ plug-in SDK and a large commercial plug-in market. VectorCraft
+- **Missing:** Illustrator's ecosystem is a C++ plug-in SDK and a large commercial plug-in market. Tend's Vector
   has sandboxed WebAssembly plug-ins for object filters and live effects ([plugins.md](plugins.md)) and MCP;
   missing are tool plug-ins, panel plug-ins, a plug-in directory and any third-party plug-ins (#710).
 - **Estimate:** 20–45 h for the APIs; the ecosystem itself isn't agent work.

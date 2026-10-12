@@ -1,4 +1,4 @@
-# VectorCraft Roadmap
+# Tend's Vector Roadmap
 
 - UI.5: Shared docking adds tab reordering, docking into other groups, dock splits and resizable floating panel groups. Panel positions and return locations persist with workspaces; the native icon rail and Tools panel remain available.
 
@@ -8,7 +8,7 @@
 
 > **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-13 · **Change:** minor (Image Trace colour and photo presets, measured in `docs/image-trace-quality.md`, headline numbers unchanged; community PRs and fixes of 2026-10-12: Split Into Grid options, #1462; Transform Objects and Reflect across an angle, #1448 and #1460; Pathfinder on a group, #1450; unknown parameter keys refused, #1442; grayscale TIFFs with alpha, #1466 in part; many-object edits, #1429 in part; headline numbers unchanged; Image Trace places edges to a fraction of a pixel, measured in `docs/image-trace-quality.md`, headline numbers unchanged; Transform dialogs preview and the transform tools act on direct-selected anchors, #1412 and #1408; `.ai` compound path paint, #1410, overprint, #1388, and text-only PDF parts, #1387; community PRs: strokes wider than their shape, corner drags without the bounding box, pasted pictures, compound paths in `document.inspect`, MCP guide; headline numbers unchanged; community PRs: `.ai` editing-data follow-ups (gradient stops, type of objects with an appearance, short area-type frames), PDF bleed with editing data, dialog keyboard focus, art flush with an artboard, font rescan, symbol instance redraw, `--control` port check; headline numbers unchanged; Rectangular Grid and Polar Grid tool options, #1377 in part; `.ai` files with placed (linked) pictures open from their editing data, #1264; community PRs: `.ai` and PDF bleed and editing-data import, gradient shapes imported as paths, ruler origin, Align To, Live Corners corner selection; headline numbers unchanged; G2: Film Grain added; Photoshop effects 29/57; 28 filters remain; community PRs: graph designs, Graph Data worksheet and Graph Type options; Align both centres; Pen endpoint fixes; earlier: Effect › Brush Strokes landed: Photoshop-style filters 28 of 57, raster effects 40% → 48%; `.ai` gradients, meshes and artboard names from the editing data; headline numbers unchanged; `.ai` art styles and clipping fills from the editing data; headline numbers unchanged; `editingData: "always"`; headline numbers unchanged) · **Target:** Adobe Illustrator 2026 (30.x)
 
-VectorCraft is a clean-room, open-source, pure-Rust reimplementation of the Adobe Illustrator workflow. It runs
+Tend's Vector is a clean-room, open-source, pure-Rust reimplementation of the Adobe Illustrator workflow. It runs
 on macOS, Windows, Linux, FreeBSD and the web (WASM), and agents can drive all of it over MCP, the CLI and a JSON
 control channel. This page is the summary; the evidence is in [`docs/target-app-parity.md`](docs/target-app-parity.md)
 and the work list in [`docs/gaps.md`](docs/gaps.md).
@@ -146,7 +146,7 @@ Ranked; detail in [docs/roadmap.md](docs/roadmap.md) and [docs/gaps.md](docs/gap
 | 2026-10-06 | M8 transform and distort fidelity pass (M8.1–M8.20) |
 | 2026-10-05 | M4 files done (M4.14–M4.98); M3 paint and appearance done (92 tasks over two days) |
 | 2026-10-02 | First weighted parity estimate (22 areas); look and feel measured against public screenshots |
-| 2026-10-01 | Renamed from DrawCraft to VectorCraft |
+| 2026-10-01 | Renamed from DrawCraft to Tend's Vector |
 | 2026-09-30 | Repository history begins |
 
 The full pre-standard record of what landed is kept in [docs/roadmap.md](docs/roadmap.md#progress-log-before-the-progress-docs-standard).

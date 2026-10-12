@@ -1,4 +1,4 @@
-//! VectorCraft's egui frontend: an Illustrator-style UI over `vectorcraft-engine`.
+//! Tend's Vector's egui frontend: an Illustrator-style UI over `vectorcraft-engine`.
 //!
 //! The UI is thin: every action goes through [`VectorcraftApp::run`], which dispatches UI commands
 //! (view/window) here and everything else to the engine. The same entry point serves menus,
@@ -686,7 +686,7 @@ impl VectorcraftApp {
         r
     }
 
-    /// Open a link in the browser (Help → Discord, website, GitHub…).
+    /// Open a link in the browser (Help → GitHub…).
     pub fn open_url(&mut self, url: &str) {
         match self.services.open_url.as_mut() {
             Some(open) => open(url),

@@ -1,14 +1,4 @@
-<p align="center">
-  <a href="https://getartcraft.com/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
-    </picture>
-  </a>
-</p>
-
-
-<h1 align="center">VectorCraft</h1>
+<h1 align="center">Tend's Vector</h1>
 
 <p align="center">
   <b>Vector illustration; an open-source, clean-room reimplementation of Adobe Illustrator, rebuilt in pure Rust.</b>
@@ -16,7 +6,7 @@
 
 <p align="center">
   A fast, open-source, clean-room take on the Adobe Illustrator workflow. It runs natively on
-  macOS, Windows, Linux and FreeBSD, and in the browser via WebAssembly. Built by the ArtCraft team.
+  macOS, Windows, Linux and FreeBSD, and in the browser via WebAssembly. Fork of VectorCraft by the ArtCraft team.
 </p>
 
 <p align="center">
@@ -28,30 +18,20 @@
 </p>
 
 <p align="center">
-  <a href="https://discord.gg/artcraft"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
-</p>
-
-<p align="center">
-  <a href="https://getartcraft.com/apps/vectorcraft"><b>VectorCraft on getartcraft.com</b></a> ·
-  <a href="https://getartcraft.com/">ArtCraft</a> ·
-  <a href="https://getartcraft.com/apps">All Crafting Apps</a>
+  <b>Tend's Vector</b> is a fork of <a href="https://github.com/storytold/vectorcraft">VectorCraft</a> by the ArtCraft team (MIT OR Apache-2.0).
 </p>
 
 <br>
 
 <p align="center">
-  <img src="docs/images/shot-1-neon.png" alt="VectorCraft editing the Neon Drive poster: the title is selected, the Appearance panel shows the settings of its live Outer Glow, and the Properties panel shows its character settings" width="100%">
+  <img src="docs/images/shot-1-neon.png" alt="Tend's Vector editing the Neon Drive poster: the title is selected, the Appearance panel shows the settings of its live Outer Glow, and the Properties panel shows its character settings" width="100%">
   <br><sub><b>Neon Drive</b>: a Pathfinder-cut sun, live Outer Glow on the type and grid, and clipping masks · <code>examples/neon-drive.vectorcraft</code></sub>
 </p>
 
-> [!NOTE]
-> **ArtCraft is a community of artists from all walks of life.** Digital, generative, music,
-> games &mdash; if you make things, you're one of us. **[Come say hi on Discord](https://discord.gg/artcraft).**
-
 <p align="center">
   <a href="#a-look-around">A look around</a> ·
-  <a href="#made-in-vectorcraft">Made in VectorCraft</a> ·
-  <a href="#why-vectorcraft">Why VectorCraft</a> ·
+  <a href="#made-in-vectorcraft">Made in Tend's Vector</a> ·
+  <a href="#why-vectorcraft">Why Tend's Vector</a> ·
   <a href="#quick-start">Quick start</a> ·
   <a href="#status">Status</a> ·
   <a href="#downloads">Downloads</a> ·
@@ -84,10 +64,10 @@
 </tr>
 </table>
 
-## Made in VectorCraft
+## Made in Tend's Vector
 
-Every piece below was built entirely through VectorCraft's command API, the same one the MCP server
-exposes to agents, and exported by VectorCraft's own renderer. The source files are in
+Every piece below was built entirely through Tend's Vector's command API, the same one the MCP server
+exposes to agents, and exported by Tend's Vector's own renderer. The source files are in
 [`examples/`](examples).
 
 <table>
@@ -129,7 +109,7 @@ exposes to agents, and exported by VectorCraft's own renderer. The source files 
 </tr>
 </table>
 
-## Why VectorCraft
+## Why Tend's Vector
 
 - **Familiar.** Illustrator's layout, tools, menus, panels and shortcuts: the Pen, Direct Selection,
   Pathfinder, Smart Guides, Appearance, Swatches, Layers and more. You already know how to use it.
@@ -148,7 +128,7 @@ exposes to agents, and exported by VectorCraft's own renderer. The source files 
 ## Quick start
 
 ```sh
-git clone https://github.com/storytold/vectorcraft
+git clone https://github.com/VoltrunGames/vectorcraft
 cd vectorcraft
 
 cargo run --release -p vectorcraft                          # desktop app
@@ -162,13 +142,13 @@ cd apps/vectorcraft-web && trunk build --release            # web build → dist
 cargo xtask ci                                            # fmt, clippy, tests, layering, wasm, vendor names
 ```
 
-Japanese fonts come from [storytold/craft-fonts](https://github.com/storytold/craft-fonts), an optional
+Japanese fonts come from [storytold/craft-fonts](https://github.com/VoltrunGames/craft-fonts), an optional
 build input (releases always use it): `CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p vectorcraft` (an absolute path).
 Without it, Japanese text uses the installed system fonts. See [`docs/development.md`](docs/development.md#fonts-craft-fonts-optional-build-input).
 
-On machines with two graphics processors, VectorCraft renders on the power-saving (integrated) one by default on
+On machines with two graphics processors, Tend's Vector renders on the power-saving (integrated) one by default on
 Windows and macOS, and on the one the desktop runs on under Linux. To choose, use **Preferences › Performance ›
-Graphics Processor** and restart. If a graphics processor can't show the window, VectorCraft starts again on the
+Graphics Processor** and restart. If a graphics processor can't show the window, Tend's Vector starts again on the
 next one. To pick one when starting the app, set `WGPU_POWER_PREF=high` (or `low`), or `WGPU_ADAPTER_NAME` to part of
 its name, such as `WGPU_ADAPTER_NAME=nvidia` (see [`docs/development.md`](docs/development.md#desktop-graphics-processor)).
 
@@ -178,7 +158,7 @@ drag-and-drop, set **Preferences › Performance › Linux Display Server** to *
 the app with `WAYLAND_DISPLAY= vectorcraft`: the window then opens through XWayland, where drops work
 (see [`docs/development.md`](docs/development.md#linux-wayland-and-x11)).
 
-On Linux under KDE Plasma 6.3 or later with Wayland, a drawing tablet's pen moves the cursor but VectorCraft doesn't
+On Linux under KDE Plasma 6.3 or later with Wayland, a drawing tablet's pen moves the cursor but Tend's Vector doesn't
 respond to it yet (#491). Open the window through XWayland instead, with the same preference or `WAYLAND_DISPLAY= vectorcraft` (see
 [`docs/development.md`](docs/development.md#linux-wayland-and-x11)).
 
@@ -202,7 +182,7 @@ For the experimental, unsupported 64-bit Windows 7 build, see [Windows 7 instruc
 
 ## Status
 
-VectorCraft is under active development. [**ROADMAP.md**](ROADMAP.md) has the stage, the numbers by dimension
+Tend's Vector is under active development. [**ROADMAP.md**](ROADMAP.md) has the stage, the numbers by dimension
 and what's next; [`docs/target-app-parity.md`](docs/target-app-parity.md) the full parity assessment and
 [`docs/gaps.md`](docs/gaps.md) the ranked list of what's missing.
 
@@ -215,7 +195,7 @@ files (SVG, PDF and PDF-compatible `.ai` with PDF/X, EPS, DXF, EMF/WMF, raster f
 Affinity documents (`.af` from Affinity 3, `.afdesign`, `.afpub` and, by their content, `.afphoto` from Affinity 1 and 2) open
 and place natively: layers, groups, artboards and pages, curves and shapes, fills, gradients and strokes, clipping
 and masks, text and images, with what didn't come in (effects, adjustments, brushes, master pages…) listed in the
-import warning; a file whose native data can't be read opens as its embedded preview, saying why. VectorCraft
+import warning; a file whose native data can't be read opens as its embedded preview, saying why. Tend's Vector
 doesn't write Affinity files. Current `.af` validation includes 33 pinned files, native save/reload
 and every-board SVG/PDF/PSD export, with fixes for Affinity 3 artboards, source-backed JPEGs and text runs.
 [Scope and limits](crates/affinity/README.md); [source audit and remaining gaps](docs/affinity-validation.md).
@@ -244,14 +224,14 @@ the UI can be swapped without touching the engine.
 
 Agent and contributor rules (clean-room, the asset policy, no panics in shipped code, quality gates) are in
 [`AGENTS.md`](AGENTS.md); [`docs/development.md`](docs/development.md#robustness-vectorcraft-never-crashes)
-explains how VectorCraft avoids crashing, and [`docs/releasing.md`](docs/releasing.md) how releases are built,
+explains how Tend's Vector avoids crashing, and [`docs/releasing.md`](docs/releasing.md) how releases are built,
 signed and published. Every bundled asset is listed with its licence in [`ASSETS.md`](ASSETS.md).
 
 ## Downloads
 
-**New to VectorCraft?** Download it from the [VectorCraft page on getartcraft.com](https://getartcraft.com/apps/vectorcraft). That's the easiest way to install it.
+**New to Tend's Vector?** Grab a Windows build from the **Actions** tab of this repository (workflow *Windows build*), or build it from source as shown above.
 
-**Want a specific build or format?** On GitHub, the [latest release](https://github.com/storytold/vectorcraft/releases/latest) has every build listed below, and [all releases](https://github.com/storytold/vectorcraft/releases) has earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
+**Want a specific build or format?** On GitHub, the [latest release](https://github.com/VoltrunGames/vectorcraft/releases/latest) has every build listed below, and [all releases](https://github.com/VoltrunGames/vectorcraft/releases) has earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
 
 ### Windows
 
@@ -292,71 +272,23 @@ Installers and executables are code-signed.
 |---|---|---|
 | Static site | `vectorcraft-web-<ver>.zip` | Runs in a modern browser; host it on any static server |
 
-## The Crafting Apps
+## Based on VectorCraft
 
-VectorCraft is one of the **Crafting Apps**: free, open-source creative tools from the
-[ArtCraft](https://getartcraft.com/) team, each written from scratch in Rust and each able to
-stand on its own.
+Tend's Vector is a fork of [VectorCraft](https://github.com/storytold/vectorcraft), made by the ArtCraft team and
+community. It is not an ArtCraft product and is not endorsed by, or affiliated with, the ArtCraft
+team. Everything good here comes from their work; bugs introduced since the fork are ours.
 
-| | App | What it's for | Code | Learn more |
-|:-:|---|---|---|---|
-| <img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | Image editing: layers, masks, type and real PSD files | [GitHub](https://github.com/storytold/photocraft) | [Website](https://getartcraft.com/apps/photocraft) |
-| <img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | **Vector illustration · you are here** | [GitHub](https://github.com/storytold/vectorcraft) | [Website](https://getartcraft.com/apps/vectorcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | Video editing, color and sound | [GitHub](https://github.com/storytold/filmcraft) | [Website](https://getartcraft.com/apps/filmcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | Photo library and raw development | [GitHub](https://github.com/storytold/lightcraft) | [Website](https://getartcraft.com/apps/lightcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | Reading, organizing and protecting PDFs | [GitHub](https://github.com/storytold/pdfcraft) | [Website](https://getartcraft.com/apps/pdfcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | Motion graphics and visual effects | [GitHub](https://github.com/storytold/effectcraft) | [Website](https://getartcraft.com/apps/effectcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | Page layout and publishing | [GitHub](https://github.com/storytold/designcraft) | [Website](https://getartcraft.com/apps/designcraft) |
-
-And [**ArtCraft**](https://getartcraft.com/) itself, our AI image and video studio for artists who want real control.
-
-<br>
-
-<p align="center">
-  <a href="https://discord.gg/artcraft"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
-</p>
-
-<h3 align="center">Come make things with us</h3>
-
-<p align="center">
-  Our Discord is where artists of every kind hang out: people who paint, shoot, draw, cut film,
-  set type, and people still figuring out what they like to make. Share what you're working on,
-  ask for help, tell us what's broken, or tell us what you wish these tools could do.
-  Whatever your medium and however long you've been at it, you're welcome here.
-</p>
-
-<p align="center">
-  <a href="https://discord.gg/artcraft"><b>discord.gg/artcraft</b></a> ·
-  <a href="https://getartcraft.com/">getartcraft.com</a> ·
-  <a href="https://getartcraft.com/apps">The Crafting Apps</a> ·
-  <a href="https://getartcraft.com/apps/vectorcraft">VectorCraft</a>
-</p>
-
-## Star history
-
-[![Star History Chart](https://api.star-history.com/svg?repos=storytold/vectorcraft&type=Date&legend=top-left)](https://www.star-history.com/?repos=storytold%2Fvectorcraft&type=date&legend=top-left)
+---
 
 ## License and credits
 
-VectorCraft is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
+Tend's Vector is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
 Copyright (c) 2026 ArtCraft Team and the VectorCraft contributors. Required notices are in [NOTICE](NOTICE).
 
 Bundled fonts, icons, images and other assets keep their own open licenses; each one is listed
-with its author, source and license in [ASSETS.md](ASSETS.md). Release builds also embed the
-fonts of [craft-fonts](https://github.com/storytold/craft-fonts/blob/main/ATTRIBUTION.md) (Japanese,
-Simplified Chinese and Arabic faces; SIL Open Font License 1.1).
+in the attribution file of this repository.
 
-The app icon (an engraved dragon on VectorCraft red, `#e8573f`) is the owner's original artwork; its
-palette and files are in [`assets/app-icon/`](assets/app-icon/README.md).
+The ArtCraft name, wordmark and logos are trademarks of the ArtCraft Team. They are not part of
+this fork and are not used here.
 
-The ArtCraft name, wordmark and logos in [`docs/brand/`](docs/brand/) are trademarks of the
-ArtCraft Team and are not covered by this license. They may be used only unmodified, and only as
-part of this repository and VectorCraft, under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt).
-Forks and modified versions must remove them.
-
-<sub>Adobe, Photoshop, Illustrator, Premiere Pro, Lightroom, Acrobat, After Effects and InDesign are trademarks or registered trademarks of Adobe Inc. in the United States and/or other countries. VectorCraft is an independent, open-source project and is not affiliated with, sponsored by or endorsed by Adobe Inc.; these names are used only to describe the workflows it is compatible with.</sub>
-
-<p align="center">
-  <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
-  <sub>Made by the <a href="https://getartcraft.com/">ArtCraft</a> team and community.</sub>
-</p>
+<sub>Adobe, Photoshop, Illustrator, Premiere Pro, Lightroom, Acrobat, After Effects and InDesign are trademarks or registered trademarks of Adobe Inc. in the United States and/or other countries. Tend's Vector is an independent, open-source project and is not affiliated with, sponsored by or endorsed by Adobe Inc.; these names are used only to describe the workflows it is compatible with.</sub>

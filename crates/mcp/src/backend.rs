@@ -17,7 +17,7 @@ pub trait Backend {
     fn describe(&self) -> String;
 }
 
-/// A running VectorCraft app, reached through its loopback control port.
+/// A running Tend's Vector app, reached through its loopback control port.
 pub struct Remote {
     addr: String,
     conn: Option<(BufReader<TcpStream>, TcpStream)>,
@@ -80,7 +80,7 @@ impl Backend for Remote {
         let line = json!({"id": id, "method": method, "params": params}).to_string();
         let reply = self.roundtrip(&line).map_err(|e| {
             self.conn = None;
-            format!("VectorCraft app at {}: `{method}` failed: {e}; operation may have completed; inspect state before retrying", self.addr)
+            format!("Tend's Vector app at {}: `{method}` failed: {e}; operation may have completed; inspect state before retrying", self.addr)
         })?;
         let v: Value = serde_json::from_str(reply.trim()).map_err(|e| format!("bad reply from app: {e}"))?;
         if v.get("ok").and_then(Value::as_bool) == Some(true) {

@@ -2,7 +2,7 @@
 
 > **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-13 · **Change:** minor (Vietnamese catalog added, complete under the tests; 12-language score 63% → 71%; Czech: 128 strings added since the catalog was completed are translated, #1461; scores and estimates unchanged; Korean catalog added, complete under the tests; 12-language score 54% → 63%; Hungarian catalog added; Czech render-site localization follow-up; scores and estimates unchanged) · **Target:** Adobe Illustrator 2026 (30.x)
 
-Per-language status of VectorCraft's interface. How the catalogs work and how to add a language:
+Per-language status of Tend's Vector's interface. How the catalogs work and how to add a language:
 [`development.md` › Localisation](development.md#localisation). Part of
 [target-app-parity.md](target-app-parity.md).
 

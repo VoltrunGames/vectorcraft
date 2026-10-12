@@ -117,7 +117,7 @@ pub fn attach(window: &winit::window::Window, pick: &FilePick) {
 mod tests {
     use super::*;
 
-    const FILTERS: &[Filter] = &[("VectorCraft", &["vectorcraft", "drawcraft"]), ("SVG", &["svg"]), ("PDF", &["pdf"])];
+    const FILTERS: &[Filter] = &[("Tend's Vector", &["vectorcraft", "drawcraft"]), ("SVG", &["svg"]), ("PDF", &["pdf"])];
 
     #[test]
     fn current_suffix_selects_the_format_and_an_unknown_one_uses_the_default() {

@@ -15,7 +15,7 @@
 # pincel, amostra, mesa de trabalho ...), following common desktop-software conventions (commands
 # in the infinitive, menus as nouns); no proprietary localisation resource, string table or product
 	Glowing Edges…	Bordas brilhantes…
-# UI was consulted or copied; add entries the same way. Product and technology names (VectorCraft,
+# UI was consulted or copied; add entries the same way. Product and technology names (Tend's Vector,
 # ArtCraft, SVG, OpenType, CMYK, Lab ...) stay in Latin letters; the trailing "…" of dialog
 # commands is kept.
 #
@@ -106,7 +106,7 @@
 	A lower value follows the stroke closely; a higher one gives fewer points and smoother curves.	Um valor menor segue o traço de perto; um valor maior gera menos pontos e curvas mais suaves.
 	A new preset starting from the selected one	Um novo predefinido a partir do selecionado
 	A saved copy of the selected preset	Uma cópia salva do predefinido selecionado
-	About VectorCraft	Sobre o VectorCraft
+	About Tend's Vector	Sobre o Tend's Vector
 	Absolute Position	Posição Absoluta
 	Accurate	Preciso
 	Abutting	Contíguo
@@ -196,7 +196,7 @@
 	Appearance Panel	Painel Aparência
 	Appearance of Black	Aparência do Preto
 	Appearance panel	Painel de Aparência
-	Applies the next time VectorCraft starts.	Aplica na próxima inicialização do VectorCraft.
+	Applies the next time Tend's Vector starts.	Aplica na próxima inicialização do Tend's Vector.
 	Applies when the linked file is relinked or updated.	Aplica quando o arquivo vinculado é revinculado ou atualizado.
 	Apply Brush	Aplicar Pincel
 	Apply Character Style	Aplicar Estilo de Caractere
@@ -225,8 +225,6 @@
 	Arrange: Bring to Front	Organizar: Trazer para Frente
 	Arrowheads:	Pontas de Seta:
 	Art using a deleted global swatch keeps its colour.	A arte que usa uma amostra global excluída mantém sua cor.
-	ArtCraft Website	Site do ArtCraft
-	ArtCraft website	Site do ArtCraft
 	Artboard Options	Opções de Mesa de Trabalho
 	Artboard Options: edit with the Artboard tool	Opções de Mesa de Trabalho: edite com a ferramenta Mesa de Trabalho
 	Artboard Options…	Opções de Mesa de Trabalho…
@@ -1126,10 +1124,7 @@
 	Isolate Selected Group	Isolar Grupo Selecionado
 	Italian	Italiano
 	Join	Unir
-	Join Our Discord	Junte-se ao nosso Discord
 	Join Tool	Ferramenta Unir
-	Join our Discord	Junte-se ao nosso Discord
-	Join the ArtCraft community on Discord (discord.gg/artcraft)	Junte-se à comunidade do ArtCraft no Discord (discord.gg/artcraft)
 	Join the lines of each paragraph	Junte as linhas de cada parágrafo
 	Justification…	Justificação…
 	Keep Formatting	Manter Formatação
@@ -1740,7 +1735,7 @@
 	Quarter Space	Espaço de Quarto
 	Quick Actions	Ações Rápidas
 	Quickly start a new file	Começar rapidamente um novo arquivo
-	Quit VectorCraft	Sair do VectorCraft
+	Quit Tend's Vector	Sair do Tend's Vector
 	RECENT	RECENTES
 	RGB Color	Cor RGB
 	Radar Graph Tool	Ferramenta Gráfico de Radar
@@ -1849,7 +1844,7 @@
 	{count} folder(s) or file(s) couldn't be read	{count} pasta(s) ou arquivo(s) não puderam ser lidos
 	The search stopped at its limit: search a smaller folder.	A pesquisa parou no limite: pesquise uma pasta menor.
 	Copy only fonts you own or are licensed to install.	Copie apenas fontes que sejam suas ou que você tenha licença para instalar.
-	VectorCraft copies the fonts to {folder}.	O VectorCraft copia as fontes para {folder}.
+	Tend's Vector copies the fonts to {folder}.	O Tend's Vector copia as fontes para {folder}.
 	Registered Trademark Symbol	Símbolo de Marca Registrada
 	Registry name:	Nome do registro:
 	Release	Liberar
@@ -1938,7 +1933,7 @@
 	Revert	Reverter
 	Revert to the saved version of “{name}”?	Reverter para a versão salva de “{name}”?
 	Replace “{name}”, the file this document was opened from?	Substituir “{name}”, o arquivo do qual este documento foi aberto?
-	Opening it left out what VectorCraft can't read yet ({what}), so replacing it loses that for good. Save under another name to keep it.	Ao abri-lo, ficou de fora o que o VectorCraft ainda não consegue ler ({what}), então substituí-lo perde isso para sempre. Salve com outro nome para mantê-lo.
+	Opening it left out what Tend's Vector can't read yet ({what}), so replacing it loses that for good. Save under another name to keep it.	Ao abri-lo, ficou de fora o que o Tend's Vector ainda não consegue ler ({what}), então substituí-lo perde isso para sempre. Salve com outro nome para mantê-lo.
 	Revolve…	Revolver…
 	Right Grid:	Grade Direita:
 	Right Indent	Recuo Direito
@@ -2557,10 +2552,9 @@
 	Vector Halftone	Meio-tom Vetorial
 	Vector Halftone…	Meio-tom Vetorial…
 	Vector illustration — fast, open, scriptable.	Ilustração vetorial — rápida, aberta, scriptável.
-	VectorCraft Help…	Ajuda do VectorCraft…
-	VectorCraft didn't quit normally last time. These documents had unsaved changes:	O VectorCraft não fechou normalmente da última vez. Estes documentos tinham alterações não salvas:
-	VectorCraft on GitHub	VectorCraft no GitHub
-	VectorCraft on getartcraft.com	VectorCraft em getartcraft.com
+	Tend's Vector Help…	Ajuda do Tend's Vector…
+	Tend's Vector didn't quit normally last time. These documents had unsaved changes:	O Tend's Vector não fechou normalmente da última vez. Estes documentos tinham alterações não salvas:
+	Tend's Vector on GitHub	Tend's Vector no GitHub
 	Vectors	Vetores
 	Version {version} — open-source vector illustration in pure Rust.	Versão {version} — ilustração vetorial de código aberto em Rust puro.
 	Version:	Versão:
@@ -2591,7 +2585,7 @@
 	Web Shift	Web Shift
 	Web Snap:	Web Snap:
 	Weight:	Peso:
-	Welcome to VectorCraft	Bem-vindo ao VectorCraft
+	Welcome to Tend's Vector	Bem-vindo ao Tend's Vector
 	When pasting text	Ao colar texto
 	White	Branco
 	Widget Position:	Posição do Widget:
@@ -2715,7 +2709,7 @@
 
 # The macOS menu bar (native_menu): the app and Window menus' system items, Settings pages.
 	Services	Serviços
-	Hide VectorCraft	Ocultar o VectorCraft
+	Hide Tend's Vector	Ocultar o Tend's Vector
 	Hide Others	Ocultar Outros
 	Zoom	Zoom
 	Bring All to Front	Trazer Todas para a Frente
@@ -2724,7 +2718,7 @@
 	On: one locked object showing the document, updated when it changes.	Ativado: um objeto bloqueado que mostra o documento, atualizado quando ele muda.
 	Off: an editable copy of its art, embedded in this document.	Desativado: uma cópia editável da arte, incorporada neste documento.
 	Images: link to the file instead of only embedding it.	Imagens: vincular ao arquivo em vez de apenas incorporá-lo.
-	VectorCraft documents: one locked object, updated when the file changes.	Documentos do VectorCraft: um objeto bloqueado, atualizado quando o arquivo muda.
+	Tend's Vector documents: one locked object, updated when the file changes.	Documentos do Tend's Vector: um objeto bloqueado, atualizado quando o arquivo muda.
 	A file dialog is open: choose there first	Há uma caixa de diálogo de arquivos aberta: escolha nela primeiro
 	The document was closed while its file dialog was open	O documento foi fechado enquanto sua caixa de diálogo de arquivos estava aberta
 	The dialog was closed before its file dialog answered	O diálogo foi fechado antes que sua caixa de diálogo de arquivos respondesse
@@ -3198,7 +3192,7 @@ axis	Both	Ambos
 @msg	can't encode the document: {0}	não foi possível codificar o documento: {0}
 @msg	can't parse shortcut `{c}`	não foi possível interpretar o atalho `{c}`
 @msg	can't parse shortcut `{s}` for `{k}`	não foi possível interpretar o atalho `{s}` de `{k}`
-@msg	can't save version {0}: VectorCraft writes versions {MIN_VERSION} to {VERSION}	não foi possível salvar a versão {0}: o VectorCraft grava as versões {MIN_VERSION} a {VERSION}
+@msg	can't save version {0}: Tend's Vector writes versions {MIN_VERSION} to {VERSION}	não foi possível salvar a versão {0}: o Tend's Vector grava as versões {MIN_VERSION} a {VERSION}
 @msg	can't write .{ext} images	não é possível gravar imagens .{ext}
 @msg	cannot distort a zero-size bounding box	não é possível distorcer uma caixa delimitadora de tamanho zero
 @msg	cannot read PDF: {0}	não foi possível ler o PDF: {0}
@@ -3222,7 +3216,7 @@ axis	Both	Ambos
 @msg	empty brush stroke	traço de pincel vazio
 @msg	empty cutter	cortador vazio
 @msg	empty path	traçado vazio
-@msg	file version {0} is newer than this VectorCraft supports ({VERSION})	a versão {0} do arquivo é mais recente do que este VectorCraft suporta ({VERSION})
+@msg	file version {0} is newer than this Tend's Vector supports ({VERSION})	a versão {0} do arquivo é mais recente do que este Tend's Vector suporta ({VERSION})
 @msg	freeform point {i} needs `at` [x, y] and a valid `color`	o ponto {i} de forma livre precisa de `at` [x, y] e de uma `color` válida
 @msg	freeform line {i} must be an array of point indices	a linha {i} de forma livre deve ser uma matriz de índices de pontos
 @msg	give both `start` and `end` [x, y] (or neither)	informe `start` e `end` [x, y] (ou nenhum dos dois)
@@ -3240,9 +3234,9 @@ axis	Both	Ambos
 @msg	invalid PDF setting: {0}	configuração de PDF inválida: {0}
 @msg	invalid image data for `{0}`	dados de imagem inválidos para `{0}`
 @msg	invalid parameters for `{cmd}`: {msg}	parâmetros inválidos para `{cmd}`: {msg}
-@msg	is not an image VectorCraft reads	não é uma imagem que o VectorCraft lê
-@msg	it uses `{at}`, which VectorCraft's PostScript reader doesn't know	usa `{at}`, que o leitor de PostScript do VectorCraft não conhece
-@msg	it uses `{at}`, which VectorCraft's PostScript reader doesn't know, in {procs}	usa `{at}`, que o leitor de PostScript do VectorCraft não conhece, em {procs}
+@msg	is not an image Tend's Vector reads	não é uma imagem que o Tend's Vector lê
+@msg	it uses `{at}`, which Tend's Vector's PostScript reader doesn't know	usa `{at}`, que o leitor de PostScript do Tend's Vector não conhece
+@msg	it uses `{at}`, which Tend's Vector's PostScript reader doesn't know, in {procs}	usa `{at}`, que o leitor de PostScript do Tend's Vector não conhece, em {procs}
 @msg	its Windows metafile preview was opened instead, which may simplify the art	a visualização em metarquivo do Windows foi aberta no lugar, o que pode simplificar a arte
 @msg	its preview was placed instead, at screen resolution	a visualização foi inserida no lugar, em resolução de tela
 @msg	join needs open paths	unir exige traçados abertos
@@ -3345,8 +3339,8 @@ axis	Both	Ambos
 @msg	no user workspace `{from}`	nenhum espaço de trabalho do usuário `{from}`
 @msg	node {_1} is not text	o nó {_1} não é texto
 @msg	not a DXF drawing	não é um desenho DXF
-@msg	not a VectorCraft file: {0}	não é um arquivo do VectorCraft: {0}
-@msg	not a VectorCraft shortcut set (missing `overrides`)	não é um conjunto de atalhos do VectorCraft (falta `overrides`)
+@msg	not a Tend's Vector file: {0}	não é um arquivo do Tend's Vector: {0}
+@msg	not a Tend's Vector shortcut set (missing `overrides`)	não é um conjunto de atalhos do Tend's Vector (falta `overrides`)
 @msg	not a graphic style library (format `{_1}`)	não é uma biblioteca de estilos gráficos (formato `{_1}`)
 @msg	not a stored central record	não é um registro central armazenado
 @msg	not a valid plug-in module: {0}	não é um módulo de plug-in válido: {0}
@@ -3567,9 +3561,9 @@ axis	Both	Ambos
 @msg	Sent to {_1}	Enviado para {_1}
 @msg	{_1} files	{_1} arquivos
 @msg	The graphics were lost and have been restarted	Os gráficos foram perdidos e reiniciados
-@msg	The graphics processor tried first couldn't show the window, so VectorCraft started again on {summary}	O processador gráfico tentado primeiro não conseguiu exibir a janela, então o VectorCraft reiniciou em {summary}
-@msg	Loading VectorCraft…	Carregando o VectorCraft…
-@msg	VectorCraft failed to start: {e}	Falha ao iniciar o VectorCraft: {e}
+@msg	The graphics processor tried first couldn't show the window, so Tend's Vector started again on {summary}	O processador gráfico tentado primeiro não conseguiu exibir a janela, então o Tend's Vector reiniciou em {summary}
+@msg	Loading Tend's Vector…	Carregando o Tend's Vector…
+@msg	Tend's Vector failed to start: {e}	Falha ao iniciar o Tend's Vector: {e}
 @msg	A browser with WebGPU or WebGL2 is required.	É necessário um navegador com WebGPU ou WebGL2.
 @msg	The graphics were lost and couldn't be restarted.	Os gráficos foram perdidos e não puderam ser reiniciados.
 @msg	Your unsaved changes are kept in this browser: reload the page to get them back.	Suas alterações não salvas ficam neste navegador: recarregue a página para recuperá-las.
@@ -3591,23 +3585,23 @@ axis	Both	Ambos
 @msg	it has more than {MAX_NODES} objects	tem mais de {MAX_NODES} objetos
 @msg	it has no layers	não tem camadas
 @msg	it has too many values in a row	tem valores demais em sequência
-@msg	it has {_1}, which VectorCraft doesn't read from it yet	tem {_1}, que o VectorCraft ainda não lê desse arquivo
+@msg	it has {_1}, which Tend's Vector doesn't read from it yet	tem {_1}, que o Tend's Vector ainda não lê desse arquivo
 @msg	its objects are nested too deeply	seus objetos estão aninhados com profundidade excessiva
 @msg	its section ending with `%{end}` doesn't end	sua seção que termina com `%{end}` não termina
 @msg	objects with several fills or strokes, effects or brushes came in as their drawn look ({_1}): their appearance isn't editable yet	objetos com vários preenchimentos ou traços, efeitos ou pincéis entraram com a aparência desenhada ({_1}): sua aparência ainda não é editável
 @msg	gradient “{name}” isn't defined in the file: a plain colour stands in for it	o gradiente “{name}” não está definido no arquivo: uma cor sólida o substitui
-@msg	an image VectorCraft can't read was left out	uma imagem que o VectorCraft não consegue ler foi omitida
+@msg	an image Tend's Vector can't read was left out	uma imagem que o Tend's Vector não consegue ler foi omitida
 @msg	an image whose data is cut short was left out	uma imagem com dados incompletos foi omitida
 @msg	its editing data doesn't say where its art is	seus dados de edição não indicam onde está a arte
 @msg	this file was saved without PDF compatibility, and its editing data can't be read ({why})	este arquivo foi salvo sem compatibilidade com PDF e seus dados de edição não podem ser lidos ({why})
 @msg	No fonts are missing in this document	Nenhuma fonte está ausente neste documento
-@msg	VectorCraft doesn't search other apps' or the system's folders: {path}	O VectorCraft não pesquisa pastas de outros aplicativos nem do sistema: {path}
-@msg	VectorCraft doesn't search the Shared or Public folder in Users: {path}	O VectorCraft não pesquisa a pasta Compartilhado ou Público em Usuários: {path}
+@msg	Tend's Vector doesn't search other apps' or the system's folders: {path}	O Tend's Vector não pesquisa pastas de outros aplicativos nem do sistema: {path}
+@msg	Tend's Vector doesn't search the Shared or Public folder in Users: {path}	O Tend's Vector não pesquisa a pasta Compartilhado ou Público em Usuários: {path}
 @msg	{path} is not a folder	{path} não é uma pasta
 @msg	the search couldn't start: try again in a moment	não foi possível iniciar a pesquisa: tente novamente em instantes
 @msg	searching a folder isn't available on the web	pesquisar em uma pasta não está disponível na web
 @msg	every search thread stopped on an internal error (please report this bug)	todos os processos de pesquisa pararam por um erro interno (relate este bug)
-@msg	VectorCraft's Fonts folder isn't set here: the desktop app and vectorcraft-cli set it	A pasta Fontes do VectorCraft não está definida aqui: o aplicativo para desktop e o vectorcraft-cli a definem
+@msg	Tend's Vector's Fonts folder isn't set here: the desktop app and vectorcraft-cli set it	A pasta Fontes do Tend's Vector não está definida aqui: o aplicativo para desktop e o vectorcraft-cli a definem
 @msg	choose the font files to add	escolha os arquivos de fonte a adicionar
 @msg	{n} font file(s) are now in {folder}	{n} arquivo(s) de fonte agora está(ão) em {folder}
 @msg	{n} font file(s) are now in {folder}; {failed} couldn't be added: {reason}	{n} arquivo(s) de fonte agora está(ão) em {folder}; {failed} não pôde(puderam) ser adicionado(s): {reason}
@@ -3675,7 +3669,7 @@ axis	Both	Ambos
 	Film Grain…	Granulação de filme…
 	Grain	Grão
 	Highlight Area	Área de realces
-@msg	the compressed file unpacks to more than VectorCraft reads ({_1} MB of document, {_2} MB per image)	o arquivo compactado se expande para mais do que o VectorCraft lê ({_1} MB de documento, {_2} MB por imagem)
+@msg	the compressed file unpacks to more than Tend's Vector reads ({_1} MB of document, {_2} MB per image)	o arquivo compactado se expande para mais do que o Tend's Vector lê ({_1} MB de documento, {_2} MB por imagem)
 @msg	the document is too large to save compressed ({0}): save it with Use Compression off	o documento é grande demais para ser salvo compactado ({0}): salve-o com Usar Compressão desativado
 @msg	the file stopped being read (please report this bug)	a leitura do arquivo foi interrompida (informe este erro)
 	Concentric Dividers:	Divisórias concêntricas:
