@@ -1,51 +1,25 @@
-# VectorCraft app icon
+# Tend's Vector app icon
 
-**Creature:** a regal engraved dragon, VectorCraft's mascot.
+A white tent ("Tend" → tent) on a rounded-square gradient field; the family of Tend's apps shares
+the tent and differs in colour and one small extra: a Bézier curve with anchor points under the tent on a teal-to-green field.
 
-**Style:** an engraving-style portrait in the Crafting Apps owl template (the FilmCraft owl): a tight
-head-and-shoulders portrait on a full-bleed field, no frame or roundel, with the body running off the tile.
+## Provenance
 
-**Palette** (exactly three colours):
-
-| Colour | Hex | Used for |
-|---|---|---|
-| Ink | `#0b0b0c` | line work and contour |
-| Paper | `#efe9dc` | the figure |
-| VectorCraft colour | `#e8573f` | the full-bleed field |
-
-**Tile:** `viewBox="0 0 512 512"`, a rounded square with `rx=112`, clipped. The macOS files add Apple's
-transparent margin (tile = 824/1024 of the canvas); Windows and Linux use the tile edge to edge.
-
-**Provenance:** the owner's original ArtCraft drawing (2880 px, keyed to the palette), vectorised with
-craftrules `assets/logo-options/_tools/vectorize_tile.py`. The drawing is kept in craftrules at
-`craftrules/assets/app-icons/vectorcraft/source.png`, not here. `vectorcraft.svg` is the canonical
-artwork. Licence: see `LICENSE.txt`.
+The design was generated with Gemini from prompts written by the project owner (Alexander, Voltrun
+Games) and converted to the icon formats by a script: the background was keyed out into a transparent
+rounded square and rendered at each size. It is original work for this project (no third-party
+material), licensed [MIT OR Apache-2.0](LICENSE.txt). The source image is raster, so the `.svg`
+files embed a PNG; they are not true vector drawings. Check the terms of the tool you use if you
+sell the app commercially.
 
 ## Files
 
-| File | What | Used by |
-|---|---|---|
-| `vectorcraft.svg` | master vector (traced at 2048 px, about 700 KB) | source for everything below |
-| `vectorcraft-small.svg` | lighter vector (traced at 1024 px, about 370 KB) | `hicolor/scalable` |
-| `vectorcraft-1024.png` | full tile, 1024 px | docs, store listings |
-| `vectorcraft-macos-512.png` | tile with Apple margin, 512 px | runtime Dock icon (`apps/vectorcraft/src/main.rs`) |
-| `vectorcraft.icns` | macOS icon set, 16 to 1024 px | `cargo xtask bundle` (`CFBundleIconFile`) |
-| `vectorcraft.ico` | Windows icon, 16 to 256 px | `apps/vectorcraft/build.rs` (embedded in the `.exe`) |
-| `hicolor/<size>/apps/ai.storyteller.vectorcraft.png` | Linux theme icons, 16 to 512 px; the 256 one is also the runtime icon on Windows and Linux, the 128 one the brand mark in the app bar and About box (`crates/ui-egui/src/brand.rs`) | `packaging/linux/ai.storyteller.vectorcraft.desktop` |
-| `hicolor/scalable/apps/ai.storyteller.vectorcraft.svg` | Linux scalable icon | as above |
+| File | What |
+|---|---|
+| `vectorcraft.svg`, `vectorcraft-small.svg` | SVG wrappers around the PNG artwork (1024 px and 256 px) |
+| `vectorcraft-1024.png` | 1024 px render |
+| `vectorcraft.icns` | macOS bundle icon (Apple's icon grid: 824 of 1024 px with a transparent margin) |
+| `vectorcraft.ico` | Windows icon, 16–256 px (embedded in the exe by `build.rs`) |
+| `hicolor/<size>/apps/ai.storyteller.vectorcraft.png`, `hicolor/scalable/…svg` | Linux icon theme |
 
-## How it reaches each OS
-
-- **macOS:** the app sets the Dock / app-switcher icon at runtime (`ViewportBuilder::with_icon`); the
-  `.app` from `cargo xtask bundle` carries `vectorcraft.icns`.
-- **Windows:** `build.rs` embeds `vectorcraft.ico` and VERSIONINFO with `winresource` (taskbar, Start
-  menu, Explorer, Alt-Tab); the runtime icon covers the title bar.
-- **Linux:** install `packaging/linux/ai.storyteller.vectorcraft.desktop` to `share/applications/` and
-  `hicolor/` to `share/icons/`. The app sets its Wayland app ID / X11 class to
-  `ai.storyteller.vectorcraft`, so the dock matches the window to the launcher.
-
-## Regenerate
-
-Edit or replace `vectorcraft.svg` (and `vectorcraft-small.svg`), then run `packaging/icons.sh`
-(needs `resvg`; `iconutil` on macOS for the `.icns`). It writes every PNG, the `.ico` (via
-`cargo xtask ico`) and the `.icns`.
+Also derived from it: the in-app icon.
