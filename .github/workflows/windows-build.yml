@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: windows-build-${{ github.ref }}
@@ -60,3 +60,21 @@ jobs:
           name: tends-vector-windows
           path: dist/tends-vector-windows-x64.zip
           if-no-files-found: error
+
+      # Also publish the zip as a (pre)release named "windows-latest", which Tend's Hub downloads.
+      # It is a prerelease so it never counts as the repository's latest release.
+      - name: Publish release asset
+        if: github.ref == 'refs/heads/main'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $zip = "dist/tends-vector-windows-x64.zip"
+          $notes = "commit: $env:GITHUB_SHA"
+          gh release view windows-latest 2>$null | Out-Null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create windows-latest $zip --prerelease --latest=false --title "Windows build (latest main)" --notes $notes
+          } else {
+            gh release upload windows-latest $zip --clobber
+            gh release edit windows-latest --notes $notes --prerelease --latest=false
+          }
