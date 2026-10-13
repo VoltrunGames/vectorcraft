@@ -15,7 +15,7 @@ fn main() -> Result<(), String> {
     res.set_icon("../../assets/app-icon/vectorcraft.ico")
         .set("ProductName", "Tend's Vector")
         .set("FileDescription", "Tend's Vector vector illustration editor")
-        .set("CompanyName", "Learning Machines LLC")
+        .set("CompanyName", "Voltrun Games")
         .set("LegalCopyright", "Copyright (c) the Tend's Vector authors. MIT OR Apache-2.0.")
         .set("OriginalFilename", "vectorcraft.exe")
         .set("InternalName", "vectorcraft");
