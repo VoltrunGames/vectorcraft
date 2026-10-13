@@ -41,4 +41,5 @@ jobs:
         run: |
           gh release create "vendor-$STAMP" "tends-vector-vendor-$STAMP.tar.zst" \
             --title "Vendored dependencies $STAMP" \
+            --prerelease --latest=false \
             --notes "All dependencies for offline builds. Unpack in the repo root, add vendor-config.toml's contents to .cargo/config.toml and run: cargo build --release --offline"
